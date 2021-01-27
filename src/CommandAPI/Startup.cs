@@ -57,6 +57,7 @@ namespace CommandAPI
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, CommandContext context)
         {
             context.Database.Migrate();
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
