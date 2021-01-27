@@ -5,6 +5,7 @@ using CommandAPI.Dtos;
 using CommandAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CommandAPI.Controllers
 {
@@ -36,6 +37,7 @@ namespace CommandAPI.Controllers
         }
 
         // Name needs to be declared explicitly to use CreatedAtRoute method
+        [Authorize]
         [HttpGet("{id}", Name="GetCommandById")]
         public ActionResult<CommandReadDto> GetCommandById(int id)
         {
